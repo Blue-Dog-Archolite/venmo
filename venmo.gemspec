@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "venmo"
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Robert R. Meyer"]
@@ -30,6 +30,7 @@ Gem::Specification.new do |s|
     "lib/tasks/venmo_tasks.rake",
     "lib/venmo.rb",
     "lib/venmo/config.rb",
+    "lib/venmo/pay.rb",
     "lib/venmo/sender.rb",
     "test/helper.rb",
     "test/test_venmo.rb",
