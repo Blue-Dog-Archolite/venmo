@@ -1,3 +1,4 @@
 Venmo.configure do |c|
-  c.api= "My Super Secret API"
+  c.access_token= "My Super Secret API"
+  c.privacy= "private"
 end

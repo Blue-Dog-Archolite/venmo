@@ -2,7 +2,10 @@ module Venmo
   module Config
 
     VALID_OPTIONS_KEYS = [
-      :secret
+      :access_token,
+
+      #will default to private if not set
+      :privacy
     ].freeze
 
     # @private
