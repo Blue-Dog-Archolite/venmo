@@ -1,5 +1,6 @@
 require 'venmo/config'
 require 'venmo/sender'
+require 'venmo/pay'
 
 module Venmo
   extend Config
