@@ -3,6 +3,7 @@ require 'venmo/sender'
 
 module Venmo
   extend Config
+  extend Pay
 
   def self.configure
     yield self
