@@ -29,7 +29,8 @@ Gem::Specification.new do |s|
     "VERSION",
     "lib/venmo.rb",
     "test/helper.rb",
-    "test/test_venmo.rb"
+    "test/test_venmo.rb",
+    "venmo.gemspec"
   ]
   s.homepage = "http://github.com/Blue-Dog-Archolite/venmo"
   s.licenses = ["MIT"]
