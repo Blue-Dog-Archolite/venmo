@@ -1,6 +1,6 @@
 = venmo
 
-Description goes here.
+Gem for integration with Venmo payment systems.
 
 == Contributing to venmo
  
