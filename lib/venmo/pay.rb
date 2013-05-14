@@ -1,45 +1,38 @@
 module Venmo
   module Pay
-
-    def self.pay_by_email(email, amount, note)
-      send_hash= common(amount,note, { :email => email})
+    def pay_by_email(email, amount, note)
+      @send_hash= common(amount,note, { :email => email})
       core_pay
-    # -d email= \
+      # -d email= \
     end
 
-    def self.pay_by_user_id(user_id, amount, note)
-      send_hash= common(amount,note, {:user_id => user_id})
+    def pay_by_user_id(user_id, amount, note)
+      @send_hash= common(amount,note, {:user_id => user_id})
       core_pay
-    # -d user_id= \
+      # -d user_id= \
     end
 
-    def self.pay_by_phone_number(phone_number, amount, note)
-      send_hash = common(amount,note, {:phone_number=> phone_number})
+    def pay_by_phone_number(phone_number, amount, note)
+      @send_hash = common(amount,note, {:phone_number=> phone_number})
       core_pay
-    # -d phone= \
+      # -d phone= \
     end
 
     protected
-    def common(amount, note, merge_in)
-      {amount: amount,
-        note: note}.merge(merge_in)
+    def common(new_amount, new_note, merge_in)
+      {
+       amount: new_amount,
+       note: new_note,
+       access_token: Venmo.access_token,
+       audience: (Venmo.privacy || "private")
+      }.merge(merge_in)
     end
 
     def core_pay
-      base_url = "curl https://api.venmo.com/payments \ -d"
-      to_send = base_url+send_hash.join('\ -d')
-      debugger
-      `#{to_send}`
-    end
-
-    def send_hash=(update_hash)
-      send_hash
-      @send_hash.merge(update_hash)
-    end
-
-    def send_hash
-      @send_hash ||= {access_token: Venmo.access_token,
-                      audience: (Venmo.privacy || "private")}
+      base_url = "curl https://api.venmo.com/payments/?"
+      h = @send_hash.collect{|k,v| "#{k.to_s}=#{v.respond_to?(:gsub) ? CGI::escape(v) : v}"}.join('&')
+      to_send = base_url + h
+      resp = `#{to_send}`
     end
   end
 end
