@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "venmo"
   gem.homepage = "http://github.com/Blue-Dog-Archolite/venmo"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Gem to integrate with Venmo payment services}
+  gem.description = %Q{Gem using curl to post to Venmo payment gateway}
   gem.email = "Blue.Dog.Archolite@gmail.com"
   gem.authors = ["Robert R. Meyer"]
   # dependencies defined in Gemfile
