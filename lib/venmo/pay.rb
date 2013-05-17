@@ -29,9 +29,8 @@ module Venmo
     end
 
     def core_pay
-      base_url = "curl https://api.venmo.com/payments/?"
       h = @send_hash.collect{|k,v| "#{k.to_s}=#{v.respond_to?(:gsub) ? CGI::escape(v) : v}"}.join('&')
-      to_send = base_url + h
+      base_url = "curl --data \"#{h}\" https://api.venmo.com/payments/"
       `#{to_send}`
     end
   end
