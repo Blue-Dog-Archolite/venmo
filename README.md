@@ -3,8 +3,14 @@ venmo
 
 Venmo API Integration
 
+====
 
-This is in super beta. Just started working on it.
+Recent Fixes in 0.3.2
+
+Curl now posts to endpoint with --data call.
+
+
+====
 
 Venmo.pay_by_email(email, amount, note)
 
