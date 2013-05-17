@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "venmo"
-  s.version = "0.3.0"
+  s.version = "0.3.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Robert R. Meyer"]
-  s.date = "2013-05-16"
+  s.date = "2013-05-17"
   s.description = "Gem using curl to post to Venmo payment gateway"
   s.email = "Blue.Dog.Archolite@gmail.com"
   s.extra_rdoc_files = [
