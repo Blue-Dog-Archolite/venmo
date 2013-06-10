@@ -14,7 +14,7 @@ module Venmo
 
     def pay_by_phone_number(phone_number, amount, note)
       # -d phone= \
-      @send_hash = common(amount,note, {:phone_number=> phone_number})
+      @send_hash = common(amount,note, {:phone=> phone_number})
       core_pay
     end
 
