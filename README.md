@@ -4,6 +4,9 @@ venmo
 Venmo API Integration
 
 ====
+Change Log:
+
+0.4.0: Fix for calling to phone_number and not phone as arguments in curl.
 
 Recent Fixes in 0.3.2
 
